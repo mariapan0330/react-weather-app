@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './DisplayResults.css'
+// import 
+
 
 export default function DisplayResults(props){
-    const [backgroundImage, setBackgroundImage] = useState('default')
     const [possibleWeathers, setPossibleWeathers] = useState(['clear', 'clouds', 'default', 'drizzle', 'fog', 'mist', 'rain', 'snow', 'thunderstorm', 'tornado'])
     const [weather, setWeather] = useState(props.weatherData['weather'][0]['main'].toLowerCase())
 
@@ -10,9 +11,9 @@ export default function DisplayResults(props){
 
         if (possibleWeathers.includes(weather)){
             console.log('weather is in the list');
-            setBackgroundImage(weather)
+            // props.setBackgroundImage(`../images/${weather}.jpg`)
         } else {
-            setBackgroundImage('default')
+            // props.setBackgroundImage('default')
         }
     }, [weather, possibleWeathers])
 

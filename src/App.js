@@ -1,7 +1,5 @@
 import Landing from "./components/Landing.jsx"
-import QuickSearch from "./components/QuickSearch.jsx"
 import './App.css'
-import { HashLink } from 'react-router-hash-link';
 import { apiKey } from './key.js'
 
 async function getWeatherData(city, country, zip, lat, lon){
@@ -38,11 +36,7 @@ async function getWeatherData(city, country, zip, lat, lon){
     return data
 }
 
-
 function App() {
-
-
-
     return (
         <>
         <div className="container my-container homepage">
