@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { apiKey } from '../key';
+
 
 export default function QuickSearch(props) {
     const [cityInput, setCityInput] = useState('');
@@ -7,15 +9,30 @@ export default function QuickSearch(props) {
         setCityInput(e.target.value);
     }
 
+    async function onSubmit(value){
+        console.log("You submitted:", value)
+        let weatherData = await props.getWeatherData(value)
+        console.log(apiKey)
+        console.log(weatherData)
+        if (weatherData['cod'] >= '400') {
+            console.log("THERE WAS AN ERROR GETTING YOUR DATA")
+        } else {
+            // console.log(weatherData)
+            console.log('got the weather data.');
+            // buildInfoPage(weatherData)
+        }
+        props.setWeatherData(weatherData)
+        props.setDisplayTheResults(true)
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
-        props.onSubmit(cityInput);
+        onSubmit(cityInput);
     }
 
     return (
         <>
-        <h1>QUICK SEARCH</h1>
-        <form className="mx-5 d-flex" onSubmit={handleSubmit}>
+        <form className="m-5 d-flex" onSubmit={handleSubmit}>
             <input
                 className="form-control me-2 mt-2 px-3 py-2 fs-5"
                 type="text"
