@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Landing from "./components/Landing.jsx"
+import QuickSearch from "./components/QuickSearch.jsx"
+import './App.css'
+import { HashLink } from 'react-router-hash-link';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    
+
+    const onSubmit = (msg) => {
+        console.log("You submitted:", msg)
+    }
+
+    return (
+        <>
+        <div className="container my-container homepage">
+            <Landing onSubmit={onSubmit}/>
+        </div>
+        </>
+    );
 }
 
 export default App;
