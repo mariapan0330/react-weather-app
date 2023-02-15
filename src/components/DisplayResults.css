@@ -1,0 +1,42 @@
+#results-row{
+    color:white; 
+    padding: 50px; 
+    margin: 9% 10%; 
+    border: 2px solid white; 
+    border-radius: 15px; 
+    background-color:rgba(0, 0, 50, 0.40);
+}
+
+#results-column{
+    padding: 0 0 0 5%;
+}
+
+#city {
+    font-size:9vh
+}
+
+#country {
+    font-size:5vh;
+    color:lightgray;
+}
+
+#currentTemp {
+    font-size:15vh;
+}
+
+#currentWeather {
+    font-size:6vh;
+}
+
+#feelsLike {
+    font-size:6vh;
+    margin: 0 0 5vh 0;
+}
+
+#stats {
+    font-size:3.5vh;
+}
+
+#lowTemp{
+    margin: 0 0 5vh 0;
+}

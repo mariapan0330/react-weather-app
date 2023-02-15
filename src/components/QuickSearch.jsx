@@ -4,6 +4,7 @@ import { apiKey } from '../key';
 
 export default function QuickSearch(props) {
     const [cityInput, setCityInput] = useState('');
+    const [errorMsg, setErrorMsg] = useState("")
 
     function handleCityInputChange(e) {
         setCityInput(e.target.value);
@@ -15,19 +16,23 @@ export default function QuickSearch(props) {
         console.log(apiKey)
         console.log(weatherData)
         if (weatherData['cod'] >= '400') {
-            console.log("THERE WAS AN ERROR GETTING YOUR DATA")
+            let message = "Oops! That didn't work. Try double checking your spelling."
+            console.log(message)
+            setErrorMsg(message)
+            props.setDisplayTheResults(false)
         } else {
             // console.log(weatherData)
+            setErrorMsg("")
             console.log('got the weather data.');
-            // buildInfoPage(weatherData)
+            props.setWeatherData(weatherData)
+            props.setDisplayTheResults(true)
         }
-        props.setWeatherData(weatherData)
-        props.setDisplayTheResults(true)
     }
 
     function handleSubmit(e) {
         e.preventDefault();
         onSubmit(cityInput);
+        setCityInput("")
     }
 
     return (
@@ -54,6 +59,18 @@ export default function QuickSearch(props) {
                 Advanced Search
             </button>
         </form>
+        {errorMsg ? 
+        <h2 className='text-center text-light fw-bold' style={
+            {color: 'white',
+            padding: '20px', 
+            margin: '0 10%', 
+            border: '2px solid black',
+            borderRadius: '15px',
+            backgroundColor: 'rgba(0,0,0, 0.5)'}}
+            >{errorMsg}</h2>
+        :
+        <></>
+        }
         </>
     );
 }

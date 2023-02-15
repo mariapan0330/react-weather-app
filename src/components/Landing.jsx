@@ -11,11 +11,7 @@ export default function Landing(props){
         <div className="landing p-5">
             <a className="ps-5 navbar-brand fs-1 fw-bold" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">WHATEVER THE WEATHER</a>
             <QuickSearch getWeatherData={props.getWeatherData} setWeatherData={setWeatherData} setDisplayTheResults={setDisplayTheResults} />
-            {displayTheResults ? 
-            <DisplayResults weatherData={weatherData} />
-            :
-            <></>
-            }
+            {displayTheResults ? <DisplayResults weatherData={weatherData} /> : <></> }
             
         </div>
     )
