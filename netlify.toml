@@ -1,5 +1,4 @@
 [build]
-  base = "react-weather-app/public"
   publish = "react-weather-app/build"
   command = "npm run build"
 
