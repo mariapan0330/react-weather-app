@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Landing.css'
-import QuickSearch from "./QuickSearch"
-import DisplayResults from "./DisplayResults"
+import QuickSearch from './QuickSearch'
+import DisplayResults from './DisplayResults'
 import clearImg from '../images/clear.jpg'
 import cloudsImg from '../images/clouds.jpg'
 import defaultImg from '../images/default.jpg'
@@ -14,10 +14,10 @@ import thunderstormImg from '../images/thunderstorm.jpg'
 import tornadoImg from '../images/tornado.jpg'
 
 export default function Landing(props){
-    const [displayTheResults, setDisplayTheResults] = useState(false);
-    const [weatherData, setWeatherData] = useState(false);
-    const [backgroundImg, setBackgroundImg] = useState(defaultImg)
-    const [weather, setWeather] = useState('default')
+    const [displayTheResults, setDisplayTheResults] = useState(false); // toggled when the QuickSearch form is submitted if the data is good.
+    const [weatherData, setWeatherData] = useState(''); // filled by QuickSearch when the data is fetched
+    const [backgroundImg, setBackgroundImg] = useState(defaultImg);
+    const [weather, setWeather] = useState('');
 
     const weatherImages = {
         clear: clearImg,
@@ -29,27 +29,40 @@ export default function Landing(props){
         snow: snowImg,
         thunderstorm: thunderstormImg,
         tornado: tornadoImg,
-    }
+    };
 
     
     useEffect(() => {
+        // Not all possible weathers have a corresponding image
         if (weather in weatherImages){
-            setBackgroundImg(weatherImages[weather])
+            setBackgroundImg(weatherImages[weather]);
         } else {
-            setBackgroundImg(defaultImg)
-        }
-    }, [weather])
+            setBackgroundImg(defaultImg);
+        };
+    }, [weather]);
 
 
     return (
         <div className="landing p-5" 
-        style={{backgroundImage: `url(${backgroundImg})`}}
-            >
-            <a className="ps-5 navbar-brand fs-1 fw-bold" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target='blank'>WHATEVER THE WEATHER</a>
+        style={{backgroundImage: `url(${backgroundImg})`}}>
 
-            <QuickSearch setWeather={setWeather} getWeatherData={props.getWeatherData} setWeatherData={setWeatherData} setDisplayTheResults={setDisplayTheResults} />
+            <a className="ps-5 navbar-brand fs-1 fw-bold" 
+            href=".">
+                WHATEVER THE WEATHER
+            </a>
+
+            {/* The QuickSearch component contains the search by city name functionality, 
+            but I put the OpenWeather API fetch request in App.js because I might use it in a hypothetical Advanced Search component oOoOOooh*/}
+            {/* Github for QuickSearch component: https://github.com/mariapan0330/react-weather-app/blob/main/src/components/QuickSearch.jsx */}
+            <QuickSearch 
+            setWeather={setWeather} 
+            getWeatherData={props.getWeatherData} 
+            setWeatherData={setWeatherData} 
+            setDisplayTheResults={setDisplayTheResults} 
+            />
+            
             {displayTheResults ? <DisplayResults weatherData={weatherData} /> : <></> }
             
         </div>
-    )
-}
+    );
+};
