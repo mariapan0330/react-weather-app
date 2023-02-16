@@ -5,8 +5,10 @@ import { apiKey } from './key.js'
 async function getWeatherData(city, country, zip, lat, lon){
     console.log('Getting Weather Data...');
 
+    // -- Most of these conditions will come into play when I get the Advanced Search form going. --
+    
     // if zip code, call zip & country
-    // if city, call city
+    // if city, call city (but country is not always what you intend)
     // if city and country, call city and country
     // if lat, call lat & lon
     let res;

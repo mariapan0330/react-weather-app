@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from 'react'
 import './DisplayResults.css'
-// import 
 
 export default function DisplayResults(props){
-
     console.log('Building Info Card...');
-
 
     return (
         <>

@@ -19,13 +19,22 @@ export default function Landing(props){
     const [backgroundImg, setBackgroundImg] = useState(defaultImg)
     const [weather, setWeather] = useState('default')
 
-    let possibleWeathers = ['clear', 'clouds', 'drizzle', 'fog', 'mist', 'rain', 'snow', 'thunderstorm', 'tornado']
-    let weatherImages = [clearImg, cloudsImg, drizzleImg, fogImg, mistImg, rainImg, snowImg, thunderstormImg, tornadoImg]
+    const weatherImages = {
+        clear: clearImg,
+        clouds: cloudsImg,
+        drizzle: drizzleImg,
+        fog: fogImg,
+        mist: mistImg,
+        rain: rainImg,
+        snow: snowImg,
+        thunderstorm: thunderstormImg,
+        tornado: tornadoImg,
+    }
 
     
     useEffect(() => {
-        if (possibleWeathers.includes(weather)){
-            setBackgroundImg(weatherImages[possibleWeathers.indexOf(weather)])
+        if (weather in weatherImages){
+            setBackgroundImg(weatherImages[weather])
         } else {
             setBackgroundImg(defaultImg)
         }
