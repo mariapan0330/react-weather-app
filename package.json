@@ -17,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-with-key": "cd src && echo export const API_KEY = '1cdb39747dbb734b204e9195629e8a2e'; > key.js && npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -36,8 +37,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "netlify-plugin-inline-functions-env": "^1.0.9"
   }
 }
