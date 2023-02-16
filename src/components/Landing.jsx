@@ -22,7 +22,7 @@
  * 
 */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import './Landing.css'
 import QuickSearch from './QuickSearch'
 import DisplayResults from './DisplayResults'
@@ -43,17 +43,20 @@ export default function Landing(props){
     const [backgroundImg, setBackgroundImg] = useState(defaultImg);
     const [weather, setWeather] = useState('');
 
-    const weatherImages = {
-        clear: clearImg,
-        clouds: cloudsImg,
-        drizzle: drizzleImg,
-        fog: fogImg,
-        mist: mistImg,
-        rain: rainImg,
-        snow: snowImg,
-        thunderstorm: thunderstormImg,
-        tornado: tornadoImg,
-    };
+    
+    const weatherImages = useMemo(() => {
+        return {
+            clear: clearImg,
+            clouds: cloudsImg,
+            drizzle: drizzleImg,
+            fog: fogImg,
+            mist: mistImg,
+            rain: rainImg,
+            snow: snowImg,
+            thunderstorm: thunderstormImg,
+            tornado: tornadoImg
+        };
+    }, []);
 
     
     useEffect(() => {
@@ -63,7 +66,7 @@ export default function Landing(props){
         } else {
             setBackgroundImg(defaultImg);
         };
-    }, [weather]);
+    }, [weather, weatherImages]);
 
 
     return (
