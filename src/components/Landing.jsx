@@ -1,3 +1,27 @@
+/**
+ * Hello Airbnb recruiters! :)
+ * 
+ * This file contains the code for the Landing page component of my weather reporting web app.
+ * 
+ * The application fetches data from the OpenWeather API based on what city the user enters,
+ * and presents the results in an aesthetically pleasing way (always a plus).
+ * 
+ * This particular component renders the searchbar and search results, and it changes the website's
+ * background image based on the weather data received.
+ * 
+ * I chose to show you this because I think it demonstrates my understanding of a couple of React 
+ * Hooks and I like my use of a JS object to select the correct image for the corresponding weather.
+ * 
+ * I originally did this project in vanilla JS/HTML, but I migrated it to React so I could submit 
+ * it as a code snippet to you guys and show off some framework skills too!
+ * 
+ * I hope this snippet leaves you saying, "The forecast is bright with this one!"
+ * 
+ * From your shiny new hire,
+ * Maria
+ * 
+*/
+
 import React, { useState, useEffect } from 'react'
 import './Landing.css'
 import QuickSearch from './QuickSearch'
