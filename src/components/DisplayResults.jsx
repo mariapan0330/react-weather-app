@@ -2,20 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './DisplayResults.css'
 // import 
 
-
 export default function DisplayResults(props){
-    const [possibleWeathers, setPossibleWeathers] = useState(['clear', 'clouds', 'default', 'drizzle', 'fog', 'mist', 'rain', 'snow', 'thunderstorm', 'tornado'])
-    const [weather, setWeather] = useState(props.weatherData['weather'][0]['main'].toLowerCase())
-
-    useEffect(() => {
-
-        if (possibleWeathers.includes(weather)){
-            console.log('weather is in the list');
-            // props.setBackgroundImage(`../images/${weather}.jpg`)
-        } else {
-            // props.setBackgroundImage('default')
-        }
-    }, [weather, possibleWeathers])
 
     console.log('Building Info Card...');
 

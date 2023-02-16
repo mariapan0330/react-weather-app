@@ -1,9 +1,7 @@
 .landing {
     min-height: 100vh;
     min-width: 100vw;
-    
 
-    /* background-image: url('../images/default.jpg'); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

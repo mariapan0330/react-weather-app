@@ -24,6 +24,7 @@ export default function QuickSearch(props) {
             // console.log(weatherData)
             setErrorMsg("")
             console.log('got the weather data.');
+            props.setWeather(weatherData['weather'][0]['main'].toLowerCase())
             props.setWeatherData(weatherData)
             props.setDisplayTheResults(true)
         }
@@ -57,6 +58,7 @@ export default function QuickSearch(props) {
                 onClick={props.onAdvancedClick}
             >
                 Advanced Search
+                {/* currently inactive */}
             </button>
         </form>
         {errorMsg ? 
