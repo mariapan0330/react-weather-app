@@ -1,6 +1,6 @@
 import Landing from "./components/Landing.jsx"
 import './App.css'
-// import { apiKey } from './key.js'
+import { API_KEY } from './key.js'
 
 async function getWeatherData(city, country, zip, lat, lon){
     console.log('Getting Weather Data...');
