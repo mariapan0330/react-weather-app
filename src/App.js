@@ -1,9 +1,10 @@
 import Landing from "./components/Landing.jsx"
 import './App.css'
-import { API_KEY } from './key.js'
+// import { API_KEY } from './key.js'
 
 async function getWeatherData(city, country, zip, lat, lon){
     console.log('Getting Weather Data...');
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     // -- Most of these conditions will come into play when I get the Advanced Search form going. --
     
