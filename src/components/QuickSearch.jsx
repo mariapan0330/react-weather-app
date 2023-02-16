@@ -46,19 +46,12 @@ export default function QuickSearch(props) {
                 value={cityInput}
                 onChange={handleCityInputChange}
             />
-            <button
-                className="btn btn-outline-warning me-2 mt-2 px-3 py-2 fs-5"
-                type="submit"
-            >
+            <button className="btn btn-outline-warning me-2 mt-2 px-3 py-2 fs-5" type="submit">
                 Search
             </button>
-            <button
-                className="btn btn-outline-light me-2 mt-2 px-3 py-2 fs-5"
-                type="button"
-                onClick={props.onAdvancedClick}
-            >
+            <button className="btn btn-outline-light me-2 mt-2 px-3 py-2 fs-5" type="button" onClick={props.onAdvancedClick}>
                 Advanced Search
-                {/* currently inactive */}
+                {/* TODO: currently inactive */}
             </button>
         </form>
         {errorMsg ? 
