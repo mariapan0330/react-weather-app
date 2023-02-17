@@ -1,6 +1,6 @@
 [build]
   command = "npm run build-with-key"
-  publish = "public"
+  publish = "react-weather-app/build"
 
 [[redirects]]
   from = "/*"
