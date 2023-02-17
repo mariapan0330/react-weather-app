@@ -2,6 +2,7 @@
  * Hello Airbnb recruiters! :)
  * 
  * This file contains the code for the Landing page component of my weather reporting web app.
+ * (Currently deployed at https://stalwart-tiramisu-dee856.netlify.app/ - check it out!)
  * 
  * The application fetches data from the OpenWeather API based on what city the user enters,
  * and presents the results in an aesthetically pleasing way (always a plus).
