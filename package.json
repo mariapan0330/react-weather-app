@@ -18,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build-with-key": "cd src && echo export const API_KEY = '1cdb39747dbb734b204e9195629e8a2e'; > key.js && cd .. && npm run build"
+    "build-with-key": "cd src && echo export const API_KEY = '1cdb39747dbb734b204e9195629e8a2e'; > key.js && cd .. && npm run build",
+    "prebuild": "mkdir -p react-weather-app/build"
   },
   "eslintConfig": {
     "extends": [
